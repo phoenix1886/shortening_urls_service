@@ -26,15 +26,14 @@ def main():
     return render_template('main.html')
 
 
-@app.route('/<short_url>/', methods=['GET', 'POST'])
+@app.route('/<short_url>/')
 def short_url_processing(short_url):
-    if request.method == 'GET':
-        id_of_url = base62_to_base10(short_url)
-        url_64 = dbconnect.get_url_by_id(id_of_url)
-        url = base64.b64decode(url_64)
-        if url:
-            return redirect(url)
-        return redirect(url_for('main'))
+    id_of_url = base62_to_base10(short_url)
+    url_64 = dbconnect.get_url_by_id(id_of_url)
+    url = base64.b64decode(url_64)
+    if url:
+        return redirect(url)
+    return redirect(url_for('main'))
 
 
 if __name__ == '__main__':
