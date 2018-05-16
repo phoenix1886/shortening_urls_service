@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>URL shortening service</title>
+  <meta name="description" content="URL shortening service">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+  <link rel="icon" href="data:;base64,=">
+
+  <script>
+    function initElement() {
+      var el = document.getElementById('copy-btn');
+      el.onclick = copy;
+      };
+
+    function copy(event) {
+      var copyText = document.getElementById('short-url');
+      copyText.select();
+      document.execCommand('copy');
+      var p = document.getElementById('status');
+      p.textContent = 'Short url copied to clipboard';
+    };
+
+  </script>
+
+</head>
+
+<body onload="initElement()">
+
+  <div class="header">
+    <div class="logo"><a id="logo-a" href="{{ url_for('main') }}">Tiny url</a></div>
+  </div>
+
+  <div class="kittens">
+  </div>
+
+  <div class="url-converter">
+    {% if not short_url %}
+    <form action="{{ url_for('main') }}" method="post">
+
+            <input class="input" name='url' type="text" placeholder="Type URL to shorten">
+            <input class="submit" type="submit" value="Shorten!">
+    </form>
+    {% else %}
+
+            <input class="input" id='short-url' name='url' type="text" placeholder="{{ short_url }}" value="{{ short_url }}">
+            <button class="submit" id="copy-btn" >COPY</button>
+
+    {% endif %}
+    <p id="status"> </p>
+  </div>
+
+  <div class="footer">
+    <div class="left">
+      Project is made for educational purposes.
+    </div>
+    <div class="right">
+      <a href="mailto:maslovks@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></i></a>
+      <a href="https://github.com/phoenix1886"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

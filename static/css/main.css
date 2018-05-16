@@ -1,0 +1,134 @@
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+    background-color: black;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    vertical-align: middle;
+    opacity: 0.8;
+    position: relative;
+    z-index: 10;
+
+}
+
+.footer {
+  background-color: black;
+
+  margin: 0;
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+
+  vertical-align: middle;
+
+}
+
+.footer div {
+  display: inline-block;
+  padding: 10px;
+  line-height: 32px;
+  color: white;
+}
+
+.footer a {
+  font-size: 32px;
+  color: white;
+  margin-right: 15px;
+}
+
+.footer a:hover {
+    color: #b3d4fc;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+
+.input,
+.submit {
+  display: inline-block;
+
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 0;
+
+}
+
+.input {
+  border: 1px solid lightgray;
+}
+
+.submit {
+  background-color: lightgreen;
+  border: 1px solid transparent;
+}
+
+.header .logo {
+    display: inline-block;
+    font-size: 62px;
+    margin:  0;
+    padding: 5px 40px 0px 10px;
+    border: white solid 2px;
+    height: 100px;
+}
+
+
+.url-converter {
+  position: relative;
+  padding: 50px 50px 0px 50px;
+  text-align: center;
+  min-width: 400px;
+  max-width: 50%;
+  background-color: black;
+  z-index: 10;
+  opacity: 0.9;
+  margin: 90px auto;
+  border: solid 5px white;
+  border-radius: 15px;
+}
+
+.url-converter p {
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 0 0 50px 0;
+    line-height: 20px;
+    color: white;
+}
+
+.kittens {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  min-height: 600px;
+  background: url("https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat;
+  background-size: cover;
+  background-position: 50% 50% ;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+div.header div.logo a {
+    color: white;
+    text-decoration: none;
+ }
+
+
